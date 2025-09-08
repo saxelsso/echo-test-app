@@ -1,7 +1,6 @@
 import { type ClientSchema, a, defineData, defineFunction } from "@aws-amplify/backend";
 
 const echoServiceFn = defineFunction({
-    name: 'echoService',
     entry: '../functions/echo-service/handler.ts',
 
 });
@@ -11,9 +10,11 @@ const schema = a.schema({
     .model({
       content: a.string(),
     })
-    .authorization((allow) => [allow.publicApiKey()]),
+    .authorization((allow) => [
+      allow.publicApiKey()
+    ]),
 
-      echoService: a
+  echoService: a
         .mutation()
         .arguments({
             echoString: a.string()
@@ -23,7 +24,11 @@ const schema = a.schema({
             allow.publicApiKey(), // <-- add this
         ])
         .handler(a.handler.function(echoServiceFn)),
-});
+  })
+  
+  .authorization(allow => [
+    allow.resource(echoServiceFn).to(['query', 'listen'])
+  ]); // allow query and subscription operations but not mutations
 
 export type Schema = ClientSchema<typeof schema>;
 
