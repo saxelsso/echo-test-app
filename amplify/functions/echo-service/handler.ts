@@ -1,7 +1,7 @@
-import { Amplify } from 'aws-amplify';
+//import { Amplify } from 'aws-amplify';
 import type { Schema } from "../../data/resource"
 //import { getAmplifyDataClientConfig } from '@aws-amplify/backend/function/runtime';
-import { generateClient } from "aws-amplify/data";
+//import { generateClient } from "aws-amplify/data";
 
 import { env } from "$amplify/env/echoService";
 
@@ -31,7 +31,7 @@ Amplify.configure(
   }
 ); */
 
-const client = generateClient<Schema>();
+//const client = generateClient<Schema>();
 
 export const handler: Schema["echoService"]["functionHandler"] = async (event) => {
     // arguments typed from `.arguments()`
