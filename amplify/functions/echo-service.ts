@@ -1,7 +1,7 @@
 import { Amplify } from "aws-amplify";
 import { getAmplifyDataClientConfig } from '@aws-amplify/backend/function/runtime';
 import { generateClient } from "aws-amplify/data";
-import { env } from "$amplify/env/handler";
+import { env } from "$amplify/env/echo-service";
 import { Schema } from '../data/resource';
  
 const { resourceConfig, libraryOptions } = await getAmplifyDataClientConfig(env);
