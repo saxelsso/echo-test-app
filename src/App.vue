@@ -20,6 +20,7 @@ const callEchoService = async () => {
   try {
     const { data } = await client.mutations.echoService({ echoString: echoInput.value })
     echoResult.value = data
+    console.log('Echo service response:', data)
   } catch (err: any) {
     error.value = err.message || 'Error calling echoService'
   } finally {
