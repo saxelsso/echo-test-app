@@ -39,6 +39,6 @@ export const handler: Schema["echoService"]["functionHandler"] = async (event) =
 
     //const todos = await client.models.Todo.list() // use this Data client for CRUDL requests
     //console.log("Todos in the database:", todos);
-    console.log("Echoing:", echoString);
-    return `Hello, ${echoString}!`
+    console.log("Echoing:", echoString + env.AWS_REGION);
+    return `Hello, ${echoString}!` + env.AWS_REGION;
 }

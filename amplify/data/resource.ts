@@ -20,7 +20,7 @@ const schema = a.schema({
         })
         .returns(a.string())
         .authorization(allow => [
-            allow.authenticated(),
+            allow.publicApiKey(), // <-- add this
         ])
         .handler(a.handler.function(echoServiceFn)),
 });
