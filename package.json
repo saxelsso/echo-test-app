@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.883.0",
+    "@types/aws-lambda": "^8.10.152",
     "aws-amplify": "^6.15.5",
     "vue": "^3.5.21"
   },
