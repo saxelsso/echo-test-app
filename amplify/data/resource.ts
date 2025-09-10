@@ -1,6 +1,6 @@
 import { type ClientSchema, a, defineData, defineFunction } from "@aws-amplify/backend";
 
-const echoServiceFn = defineFunction({
+export const echoServiceFn = defineFunction({
     entry: '../functions/echo-service.ts',
 
 });
